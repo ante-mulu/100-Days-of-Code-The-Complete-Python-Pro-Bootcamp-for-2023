@@ -2,6 +2,7 @@
 # syntax listname =[item1,item2] the item can be different data type
 # Challege-1:Banker Roulette
 import random
+#importing random module
 # name_Strings = input("Enter the list of name: ").split(",")
 # random_name = random.randint(0, len(name_Strings))
 # print(f"{name_Strings[random_name-1]} is going to but the meal today")
