@@ -1,4 +1,5 @@
 # Treasure
+# Amend the commit
 print("Your mission is to find a treasure: ")
 road_direction = input(
     'You are at cross road.Where do you want to go? type "left" or "right: "').capitalize()
