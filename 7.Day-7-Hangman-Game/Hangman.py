@@ -1,9 +1,10 @@
 # Step-1
 import random
-word_list = ["ardvark", "baboon", "camel"]
-
+import hangman_art
+import hangman_words
+print(hangman_art.logo)
 # TODO-1:Choose random word_from the word_list and assign to the variable
-chosen_list = random.choice(word_list)
+chosen_list = random.choice(hangman_words.word_list)
 print(chosen_list)
 # TODO-2:Ask user to guess a letter and assign their answer to a variable and make the guess lowercase
 # guess = input("Enter the letter").lower()
@@ -34,62 +35,7 @@ display = []
 #         print(display, end="")
 #     else:
 #         print("_", end="")
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
+
 # Step-3:Checking if the player has won
 for i in range(0, len(chosen_list)):
     display.append("_")
@@ -97,17 +43,18 @@ print(display)
 lives = 6  # Re arranged from step-4
 i = 0
 while (i < len(chosen_list)):
-    guess = input("Guess a letter: ").lower()
+    guess = input("\n Guess a letter: ").lower()
     if guess == chosen_list[i]:
         display[i] = chosen_list[i]
     else:
         lives -= 1
-    
-        while(lives>0)
-        if not lives < 0:
-            print(stages[lives])
+        if lives >= 0:
+            print(hangman_art.stages[lives])
     i += 1
-    print(display)
+    dis_letter = 0
+    while (dis_letter < len(display)):
+        print(display[dis_letter], end="")
+        dis_letter += 1
 if lives == 0:
     print("You Lose")
 display_letter = ""
