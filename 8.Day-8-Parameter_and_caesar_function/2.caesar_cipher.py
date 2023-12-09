@@ -1,20 +1,22 @@
 # TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
-def encrypt(plain_text, shift):
-    encrypted_message = []
-    for char in plain_text:
-        encrypted_char = ord(char)+shift
-        encrypted_message.append(encrypted_char)
-    for char in encrypted_message:
-        print(chr(char), end="")
+def caesar(direction):
+    if direction == "encode":
+        def encrypt(plain_text, shift):
+            encrypted_message = []
+            for char in plain_text:
+                encrypted_char = ord(char)+shift
+                encrypted_message.append(encrypted_char)
+            for char in encrypted_message:
+                print(chr(char), end="")
 
-
-def decode(cipher_text, shfit):
-    decrypted_message = []
-    for char in cipher_text:
-        decipher_char = ord(char)-shift
-        decrypted_message.append(decipher_char)
-    for char in decrypted_message:
-        print(chr(char), end="")
+    if direction == "decode":
+        def decode(cipher_text, shfit):
+            decrypted_message = []
+            for char in cipher_text:
+                decipher_char = ord(char)-shift
+                decrypted_message.append(decipher_char)
+            for char in decrypted_message:
+                print(chr(char), end="")
 
 
 the_end = False
@@ -22,10 +24,7 @@ while not the_end:
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
-    if direction == "encode":
-        encrypt(text, shift)
-    if direction == "decode":
-        decode(text, shift)
+    caesar(direction)
     end = input("\nDo you want to continue:yes,no:  ")
     if end == "no":
         the_end = True
