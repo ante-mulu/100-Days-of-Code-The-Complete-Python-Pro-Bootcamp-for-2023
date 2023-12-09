@@ -56,9 +56,12 @@ travel_log = [
 
 
 def add_new_country(country, visits, cities):
-    travel_log[0]["country"] = country
-    travel_log[0]["visits"] = visits
-    travel_log[0]["cities"] = cities
+    new_country = {
+        "country": country,
+        "visits": visits,
+        "cities": cities
+    }
+    return new_country
 
 
 travel_log.append(add_new_country("Russia", 2, ["Moscow", "saint petersnurg"]))
